@@ -7,13 +7,8 @@ home.get('/', (req, res) => {
 });
 
 // vista para la pagina por genero
-home.get('/pagina-genero', (req, res) => {
+home.get('/genero', (req, res) => {
   res.render('pagina-genero.ejs')
-});
-
-// Ruta por defecto al ingresar una ruta desconocida
-home.use((req, res) => {
-  res.send(`<h1> Ruta desconocida </h1>`);
 });
 
 export default home;

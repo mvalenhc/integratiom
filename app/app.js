@@ -7,7 +7,8 @@ import bodyParser from 'body-parser'
 import * as url from 'url'
 
 //* Imports de rutas
-import home  from './routes/home.routes.js'
+import home from './routes/home.routes.js'
+import login from './routes/login.routes.js'
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
@@ -28,5 +29,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 //* ROUTES
 app.use('/', home)
+app.use('/', login)
+
+// Ruta por defecto al ingresar una ruta desconocida
+// home.use((req, res) => {
+//     res.send(`<h1> Ruta desconocida </h1>`);
+// });
 
 export default app;
